@@ -2,14 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/votes.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/votes",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "dest": "/api/votes.js"
     }
   ]
 }
